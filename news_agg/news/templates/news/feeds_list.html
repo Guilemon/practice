@@ -1,0 +1,20 @@
+{% extends 'news/base.html' %}
+
+{% block content %}
+  <div class="container">
+    <a class="btn btn-primary" href="{% url 'new_feed' %}">Create Feed</a>
+    <hr/>
+    <ul class="list-group">
+        {% for feed in feeds %}
+        <li class="list-group-item">
+            <a target="_blank" href="{{feed.url}}">
+                <h3>
+                    {{feed.title}}
+                </h3>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+  </div>
+
+{% endblock %}
