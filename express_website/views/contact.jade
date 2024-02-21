@@ -1,0 +1,21 @@
+extends layout 
+
+block content 
+    .container
+        h1 Contact Us:
+        p dolorem laudantium temporibus ducimus totam, fugiat aliquam eius molestias commodi sapiente. Expedita, facilis quas!
+
+        form(method='post' action='contact/send')
+            h3 Fill to enquire:
+            .form-group
+                label.form-label Name:
+                input.form-control(name='name' type='text' placeholder='your name here!')
+            .form-group
+                label.form-label Email:
+                input.form-control(name='email' type='email' placeholder='your email here!')
+            .form-group
+                label.form-label Message:
+                textarea.form-control(name='message' placeholder='your message here!')
+
+            button.btn.btn-primary(type='submit') Submit
+

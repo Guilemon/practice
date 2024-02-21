@@ -5,7 +5,7 @@ html(lang='en' data-bs-theme='dark')
     script(src='javascripts/color-modes.js')
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1')
-    title ExpressWebsite
+    title #{title}: Demo Website
     link(rel='canonical' href='https://getbootstrap.com/docs/5.3/examples/navbar-fixed/')
     link(href='stylesheets/style.css' rel='stylesheet')
     link(rel='stylesheet' href='stylesheets/css@3.css')
@@ -54,20 +54,23 @@ html(lang='en' data-bs-theme='dark')
               use(href='#check2')
     nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
       .container-fluid
-        a.navbar-brand(href='#') Fixed navbar
+        a.navbar-brand(href='#') Demo Website
         button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarCollapse' aria-controls='navbarCollapse' aria-expanded='false' aria-label='Toggle navigation')
           span.navbar-toggler-icon
         #navbarCollapse.collapse.navbar-collapse
           ul.navbar-nav.me-auto.mb-2.mb-md-0
             li.nav-item
-              a.nav-link.active(aria-current='page' href='#') Home
+              a.nav-link(class=(title=='Home'?'active':'') aria-current='page' href='/') Home
             li.nav-item
-              a.nav-link(href='#') Link
+              a.nav-link(class=(title=='About'?'active':'') aria-current='page' href='/about') About Us
             li.nav-item
-              a.nav-link.disabled(aria-disabled='true') Disabled
+              a.nav-link(class=(title=='Contact'?'active':'') aria-current='page' href='/contact') Contact Us
           form.d-flex(role='search')
             input.form-control.me-2(type='search' placeholder='Search' aria-label='Search')
             button.btn.btn-outline-success(type='submit') Search
-    main.container
-          block content
+    main
+      block content
     script(src='javascripts/bootstrap.bundle.min.js')
+
+  footer
+    p &copy; somecompany
