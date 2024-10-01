@@ -58,7 +58,21 @@ public class basic {
 		for(int i: arr) {
 			System.out.printf("%3d\n", i);
 		}
-
+		
+		car lamb = new car();
+		lamb.setSpeed(100);
+		System.out.println(lamb.getSpeed());
+		changeCar(lamb);
+//		doesn't work because call by value
+//		in java. a copy is sent instead of
+//		refrence to object as param.
+		System.out.println(lamb.getSpeed());
+	}
+	
+	public static void changeCar(car c) {
+		car fordf = new car();
+		fordf.setSpeed(9000);
+		c = fordf;
 	}
 
 }
